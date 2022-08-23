@@ -3,26 +3,39 @@ package algorithem.DoitAlgorithm_java.자료구조;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class P1546_평균 {
+public class P1940_주몽 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
+        int M = Integer.parseInt(br.readLine());
         int[] A = new int[N];
-        long max = 0;
-        long sum = 0;
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         for(int i=0; i<N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
-            System.out.println(A[i]);
-            if(A[i] > max) {
-                max = A[i];
-            }
-            sum += A[i];
         }
 
-        System.out.println(sum * 100.0 / max / N);
+        Arrays.sort(A);
+
+        int count = 0;
+        int i = 0;
+        int j = N -1;
+
+        while (i < j) {
+            if(A[i] + A[j] < M) {
+                i++;
+            } else if(A[i] + A[j] > M) {
+                j--;
+            } else {
+                count++;
+                i++;
+                j--;
+            }
+        }
+        System.out.println(count);
+        br.close();
     }
 }

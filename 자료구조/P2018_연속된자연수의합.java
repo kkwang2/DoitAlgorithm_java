@@ -1,16 +1,13 @@
-package algorithem.DataStructures;
+package algorithem.DoitAlgorithm_java.자료구조;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class P2018_연속된자연수의합 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));;
+        int N = Integer.parseInt(br.readLine());
 
         int count = 1;
         int start_index = 1;
